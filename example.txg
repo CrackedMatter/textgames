@@ -1,0 +1,12 @@
+\nNorth
+left,right,quit
+10,4,0
+\nEast
+left,right
+1,7
+\nSouth
+left,right
+4,10
+\nWest
+left,right
+7,1
