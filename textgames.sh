@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 TXGLINE=1
 while [ $TXGLINE -ne 0 ]
 do
