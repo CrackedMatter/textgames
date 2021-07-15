@@ -13,7 +13,7 @@ clean:
 
 
 install:
-	@cp textgames.sh textgames
+	@cp src/textgames.sh textgames
 	@sed -i 's/bash/$(SH)/g' textgames
 	@test -d $(PREFIX) || mkdir -p $(PREFIX)
 	@install textgames $(PREFIX)
