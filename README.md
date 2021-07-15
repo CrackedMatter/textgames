@@ -15,6 +15,7 @@ Clone the repository or download the latest release:
 git clone https://github.com/CrackedMatter/textgames
 cd textgames
 ```
+Install the programm with `make`:
 - If you have root permissions (sudo), run `sudo make install`
 - If you don't have root permissions, run `make install PREFIX=~/.local/bin`
 - If you are using Termux (Android), run `make install PREFIX=/data/data/com.termux/usr/bin`
