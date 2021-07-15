@@ -10,17 +10,21 @@ written in bash.
 
 ## Installation
 
+Clone the repository or download the latest release:
 ```
 git clone https://github.com/CrackedMatter/textgames
-chmod +x textgames/textgames.sh
+cd textgames
 ```
+- If you have root permissions (sudo), run `sudo make install`
+- If you don't have root permissions, run `make install PREFIX=~/.local/bin`
+- If you are using Termux (Android), run `make install PREFIX=/data/data/com.termux/usr/bin`
 
 ## Usage
 
-Run the script with the path to the game as an argument:
+Run the program with the path to the game as an argument:
 
-Example: `./textgames.sh example.txg`
+Example: `textgames example.txg`
 
-## Creating your own games
+## More information
 
 [Wiki](https://github.com/CrackedMatter/textgames/wiki)
