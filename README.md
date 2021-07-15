@@ -17,14 +17,14 @@ cd textgames
 ```
 Install the programm with `make`:
 - If you have root permissions (sudo), run `sudo make install`
-- If you don't have root permissions, run `make install PREFIX=~/.local/bin`
-- If you are using Termux (Android), run `make install PREFIX=/data/data/com.termux/usr/bin`
+- If you don't have root permissions, run `make install PREFIX=~/.local`
+- If you are using Termux (Android), run `make install PREFIX=/data/data/com.termux/files/usr`
 
 ## Usage
 
 Run the program with the path to the game as an argument:
 
-Example: `textgames example.txg`
+Example: `textgames examplegame`
 
 ## More information
 
