@@ -7,6 +7,7 @@ written in bash.
 ## Dependencies
 
 - [sed](https://www.gnu.org/software/sed)
+- [curl](https://github.com/curl/curl)
 
 ## Installation
 
@@ -24,7 +25,7 @@ Install the programm with `make`:
 
 Run the program with the path to the game as an argument:
 
-Example: `textgames examplegame`
+Example: `textgames ./examplegame`
 
 ## More information
 
