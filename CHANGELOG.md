@@ -1,3 +1,9 @@
+## 1.2.0
+
+- Added package manager (txget)
+- textgames now prioritizes files located in ~/.txg/games/
+- Minor improvements
+
 ## 1.1.0
 
 - Added man page
