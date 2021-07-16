@@ -1,3 +1,7 @@
+## 1.2.2
+
+- txget no longer requires bash
+
 ## 1.2.1
 
 - textgames no longer requires bash
