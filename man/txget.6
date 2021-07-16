@@ -1,0 +1,65 @@
+.\" Manpage for txget
+.\" Report errors or typos to https://github.com/CrackedMatter/textgames
+.TH txget 6 "16 July 2021" "1.2.0" "txget man page"
+
+.SH NAME
+txget \- package manager for textgames
+
+.SH SYNOPSIS
+.B txget
+{install [-f] | list [-a] | show | info | uninstall | upgrade | source [-f] }
+[\fIPKG\fR]
+
+.SH DESCRIPTION
+The package manager for the \fBtextgames(6)\fR engine which downloads and installs text-based games from a repository.
+
+Unless one of the commands below is used, \fBtxget\fR will show a list of possible commands.
+.TP
+.B install
+\fBinstall\fR is used to download and install a package from a repository specified in the REPO variable.
+.TP
+.B list
+Shows a list of all installed packages.
+.TP
+.B show, info
+Shows detailed information about a package.
+.TP
+.B uninstall
+\fBuninstall\fR is used to remove an installed  package.
+.TP
+.B upgrade
+Upgrades all outdated packages to the latest version.
+.TP
+.B source
+\fBsource\fR is used to download the source code of a package into the current directory.
+
+.SH OPTIONS
+.TP 5
+.B -a
+Also show packages that were installed manually.
+.TP
+.B -f
+Don't check if files exist.
+
+.SH SEE ALSO
+\fBtextgames(6)\fR, \fBtxgc(6)\fR
+
+.SH LINKS
+.UR https://crackedmatter.github.io/
+\fBWebsite\fR
+.UE
+
+.UR https://github.com/CrackedMatter/textgames
+\fBRepository\fR
+.UE
+
+.SH BUGS
+As of 16 July 2021 there are no known bugs.
+Please report issues on the
+.UR https://github.com/CrackedMatter/issues
+issue tracker
+.UE .
+
+.SH AUTHOR
+.UR https://github.com/CrackedMatter
+.UE
