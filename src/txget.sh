@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 test -d ~/.txg || mkdir -p ~/.txg
 test -f ~/.txg/txget.conf || echo 'REPO=https://raw.githubusercontent.com/CrackedMatter/textgames-packages/main/games' > ~/.txg/txget.conf
-source ~/.txg/txget.conf
+. ~/.txg/txget.conf
 case $1 in
   install)
     test -d ~/.txg/games || mkdir -p ~/.txg/games
