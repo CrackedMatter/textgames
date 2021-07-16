@@ -1,3 +1,7 @@
+## 1.2.1
+
+- textgames no longer requires bash
+
 ## 1.2.0
 
 - Added package manager (txget)
