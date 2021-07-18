@@ -1,2 +1,2 @@
-#!/usr/bin/env sh
+#!/usr/bin/env dash
 echo 'Not yet implemented.'
