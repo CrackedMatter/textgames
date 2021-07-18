@@ -20,9 +20,9 @@ install:
 	@cp src/textgames.sh textgames
 	@cp src/txget.sh txget
 	@cp src/txgc.sh txgc
-	@sed -i 's/bash/$(SH)/g' textgames
-	@sed -i 's/bash/$(SH)/g' txget
-	@sed -i 's/bash/$(SH)/g' txgc
+	@sed -i 's/dash/$(SH)/g' textgames
+	@sed -i 's/dash/$(SH)/g' txget
+	@sed -i 's/dash/$(SH)/g' txgc
 	@test -d $(PREFIX)/$(BIN) || mkdir -p $(PREFIX)/$(BIN)
 	@test -d $(PREFIX)/$(MAN) || mkdir -p $(PREFIX)/$(MAN)
 	@install textgames $(PREFIX)/$(BIN)
