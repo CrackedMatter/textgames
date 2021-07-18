@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env dash
 test -d ~/.txg || mkdir -p ~/.txg
 test -f ~/.txg/txget.conf || echo 'REPO=https://raw.githubusercontent.com/CrackedMatter/textgames-packages/main/games' > ~/.txg/txget.conf
 . ~/.txg/txget.conf
