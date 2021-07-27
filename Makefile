@@ -1,5 +1,5 @@
 SH = sh
-PREFIX = /usr/local
+PREFIX = /usr
 BIN = /bin
 MAN = /share/man/man6
 
