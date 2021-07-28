@@ -15,7 +15,7 @@ case $1 in
       cp ~/.txg/.tmp ~/.txg/games/$TXGP
       curl -sL $REPO/_INFO/gamelist.txt -o ~/.txg/.tmp
       touch ~/.txg/installed.list
-      sed -i "/^$TXGP - v=/d" ~/.txg/installed.list
+      sed -i "/^$TXGP - v/d" ~/.txg/installed.list
       fgrep "$TXGP - v" ~/.txg/.tmp >> ~/.txg/installed.list
       echo "Successfully installed '$TXGP'"
     else
@@ -49,7 +49,7 @@ case $1 in
     ;;
   uninstall)
     rm ~/.txg/games/$2
-    sed -i "/^$2 - v=/d" ~/.txg/installed.list
+    sed -i "/^$2 - v/d" ~/.txg/installed.list
     ;;
   upgrade)
     echo 'Not yet implemented.'
