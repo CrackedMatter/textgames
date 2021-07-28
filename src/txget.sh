@@ -6,16 +6,16 @@ case $1 in
   install)
     test -d ~/.txg/games || mkdir -p ~/.txg/games
     TXGP=$2
-    [ $2 == "-f" ] && TXGP=$3
+    [ $2 = "-f" ] && TXGP=$3
     echo 'Downloading package...'
     curl -sL $REPO/$2/$2 -o ~/.txg/.tmp
-    if [ "$(cat ~/.txg/.tmp)" != "404: Not Found" ] || [ $2 == "-f" ]
+    if [ "$(cat ~/.txg/.tmp)" != "404: Not Found" ] || [ $2 = "-f" ]
     then
       echo 'Installing...'
       cp ~/.txg/.tmp ~/.txg/games/$TXGP
       curl -sL $REPO/_INFO/gamelist.txt -o ~/.txg/.tmp
       touch ~/.txg/installed.list
-      sed -i '/^"$TXGP - v"=/d' ~/.txg/installed.list
+      sed -i "/^$TXGP - v=/d" ~/.txg/installed.list
       fgrep "$TXGP - v" ~/.txg/.tmp >> ~/.txg/installed.list
       echo "Successfully installed '$TXGP'"
     else
@@ -24,7 +24,7 @@ case $1 in
     rm ~/.txg/.tmp
     ;;
   list)
-    if [ "$2" == "-a" ]
+    if [ "$2" = "-a" ]
     then
       ls ~/.txg/games
     else
@@ -49,18 +49,24 @@ case $1 in
     ;;
   uninstall)
     rm ~/.txg/games/$2
-    sed -i '/^"$2 - v"=/d' ~/.txg/installed.list
+    sed -i "/^$2 - v=/d" ~/.txg/installed.list
     ;;
   upgrade)
     echo 'Not yet implemented.'
+    sed -i '/^$/d' ~/.txg/installed.list
+    curl -sL $REPO/_INFO/gamelist.txt -o ~/.txg/.tmp
+    for i in 0 1
+    do
+     echo
+    done
     ;;
   source)
     TXGP=$2
-    [ $2 == "-f" ] && TXGP=$3
+    [ $2 = "-f" ] && TXGP=$3
     curl -sL $REPO/$TXGP/$TXGP -o ~/.txg/.tmp
-    [ "$(cat ~/.txg/.tmp)" != "404: Not Found" ] || [ $2 == "-f" ] && cp ~/.txg/.tmp ./$TXGP
+    [ "$(cat ~/.txg/.tmp)" != "404: Not Found" ] || [ $2 = "-f" ] && cp ~/.txg/.tmp ./$TXGP
     curl -sL $REPO/$TXGP/$TXGP.txg -o ~/.txg/.tmp
-    [ "$(cat ~/.txg/.tmp)" != "404: Not Found" ] || [ $2 == "-f" ] && cp ~/.txg/.tmp ./$TXGP.txg
+    [ "$(cat ~/.txg/.tmp)" != "404: Not Found" ] || [ $2 = "-f" ] && cp ~/.txg/.tmp ./$TXGP.txg
     rm ~/.txg/.tmp
     ;;
   *)
