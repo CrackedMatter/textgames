@@ -1,5 +1,5 @@
 #!/bin/sh
 if [ $HOME = "/data/data/com.termux/files/home" ]
 then
-sed -i '2s/.*/PREFIX = \/data\/data\/com.termux\/files/' ./Makefile
+sed -i '2s/.*/PREFIX = \/data\/data\/com.termux\/files\/usr/' ./Makefile
 fi
