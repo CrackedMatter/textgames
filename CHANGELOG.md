@@ -1,3 +1,8 @@
+## 1.2.5
+
+- Changed default prefix to /usr/local
+- Minor bug fixes
+
 ## 1.2.4
 
 - txget no longer requires bash
