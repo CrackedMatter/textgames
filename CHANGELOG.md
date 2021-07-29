@@ -8,10 +8,6 @@
 - txget no longer requires bash
 - Updated man pages
 
-## 1.2.3
-
-- Changed default prefix to /usr
-
 ## 1.2.2
 
 - txget now uses less bashism
