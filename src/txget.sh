@@ -8,7 +8,7 @@ case $1 in
     TXGP=$2
     [ $2 = "-f" ] && TXGP=$3
     echo 'Downloading package...'
-    curl -sL $REPO/$2/$2 -o ~/.txg/.tmp
+    curl -sL $REPO/$TXGO/$TXGP -o ~/.txg/.tmp
     if [ "$(cat ~/.txg/.tmp)" != "404: Not Found" ] || [ $2 = "-f" ]
     then
       echo 'Installing...'
@@ -19,7 +19,7 @@ case $1 in
       fgrep "$TXGP - v" ~/.txg/.tmp >> ~/.txg/installed.list
       echo "Successfully installed '$TXGP'"
     else
-      echo 'ERROR: Package not found.'
+      echo "ERROR: Package '$TXGP' not found."
     fi
     rm ~/.txg/.tmp
     ;;
@@ -52,13 +52,34 @@ case $1 in
     sed -i "/^$2 - v/d" ~/.txg/installed.list
     ;;
   upgrade)
-    echo 'Not yet implemented.'
     sed -i '/^$/d' ~/.txg/installed.list
     curl -sL $REPO/_INFO/gamelist.txt -o ~/.txg/.tmp
-    for i in 0 1
+    T=$(wc -l < ~/.txg/installed.list)
+    L=0
+    cp ~/.txg/installed.list ~/.txg/.tmp3
+    while [ $T -gt $L ]
     do
-     echo
+     L=$((L+1))
+     TXGL=$(sed "$((L))q;d" ~/.txg/.tmp3)
+     TXGP=$(echo $TXGL | cut -d " " -f 1)
+     if [ "$TXGL" != "$(fgrep $TXGP\ -\ v ~/.txg/.tmp)" ]
+     then
+       echo 'Downloading package...'
+       curl -sL $REPO/$TXGP/$TXGP -o ~/.txg/.tmp2
+       if [ "$(cat ~/.txg/.tmp2)" != "404: Not Found" ]
+       then
+         cp ~/.txg/.tmp2 ~/.txg/games/$TXGP
+         sed -i "/^$TXGP - v/d" ~/.txg/.tmp3
+         fgrep "$TXGP - v" ~/.txg/.tmp >> ~/.txg/.tmp3
+         echo "Successfully upgraded '$TXGP'"
+       else
+         echo "ERROR: Package '$TXGP' not found."
+       fi
+     fi
     done
+    mv ~/.txg/.tmp3 ~/.txg/installed.list
+    echo 'Upgrade complete.'
+    rm ~/.txg/.tmp*
     ;;
   source)
     TXGP=$2
