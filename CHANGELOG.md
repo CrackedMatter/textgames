@@ -1,18 +1,23 @@
-## 1.2.5
+## 1.3.0
+
+- Implemented upgrade command for txget
+- Installing exisiting packages with the -f option no longer results in a 404 error
+
+### 1.2.5
 
 - Changed default prefix to /usr/local
 - Minor bug fixes
 
-## 1.2.4
+### 1.2.4
 
 - txget no longer requires bash
 - Updated man pages
 
-## 1.2.2
+### 1.2.2
 
 - txget now uses less bashism
 
-## 1.2.1
+### 1.2.1
 
 - textgames no longer requires bash
 
