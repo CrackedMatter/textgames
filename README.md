@@ -6,7 +6,6 @@ written in shell.
 
 ## Dependencies
 
-- [sed](https://www.gnu.org/software/sed)
 - [curl](https://github.com/curl/curl)
 
 ## Installation
