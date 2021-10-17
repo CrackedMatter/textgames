@@ -1,4 +1,4 @@
-#!/usr/bin/env dash
+#!/bin/sh
 TXGLINE=1
 TXGAME=$1
 echo "$1" | grep -q / || TXGAME=~/.txg/games/$1
