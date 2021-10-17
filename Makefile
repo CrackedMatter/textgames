@@ -8,22 +8,12 @@ all:
 .PHONY: all
 
 
-clean:
-	$(RM) textgames
-	$(RM) txget
-	$(RM) txgc
-.PHONY: clean
-
-
 install:
-	@cp src/textgames.sh textgames
-	@cp src/txget.sh txget
-	@cp src/txgc.sh txgc
 	@test -d $(PREFIX)/$(BIN) || mkdir -p $(PREFIX)/$(BIN)
 	@test -d $(PREFIX)/$(MAN) || mkdir -p $(PREFIX)/$(MAN)
-	@install textgames $(PREFIX)/$(BIN)
-	@install txget $(PREFIX)/$(BIN)
-	@install txgc $(PREFIX)/$(BIN)
+	@install src/textgames $(PREFIX)/$(BIN)
+	@install src/txget $(PREFIX)/$(BIN)
+	@install src/txgc $(PREFIX)/$(BIN)
 	@install -m 0644 man/*.6 $(PREFIX)/$(MAN)
 .PHONY: install
 
