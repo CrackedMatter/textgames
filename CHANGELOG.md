@@ -1,3 +1,11 @@
+### v1.3.1
+
+- changed shebang to #!/bin/sh
+- removed make option to change shell
+- removed .sh file extensions
+- scripts on longer get copied to the working directory
+- removed redundant clean option from Makefile
+
 ## 1.3.0
 
 - Implemented upgrade command for txget
